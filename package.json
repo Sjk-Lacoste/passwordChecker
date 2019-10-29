@@ -1,0 +1,14 @@
+{
+  "name": "password-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "passwordChecker.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "Tshepo Mohlatlole",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  }
+}
