@@ -1,4 +1,4 @@
-let validate = require('../passwordChecker');
+let validate = require('../src/passwordChecker');
 
 describe("Password is valid", () => {
     let password = 'P@$sw0rd1';
@@ -32,17 +32,7 @@ describe("Password is valid", () => {
 
 describe("Password is okay", () => {
     let password = 'P@$sw0rd1';
-    let valid = validate.passwordIsValid(password);
+    let valid = validate.passwordIsOk(password);
     
-    it("Should at least have one special character", () => {
-        expect(valid).toMatch(/[{(%$&*"'\|#@!)}]/);
-    });
 
-    it("Should check if the password is not empty", () => {
-        expect(valid).not.toBeNull();
-    });
-
-    it("Should at least be 8 characters long", () => {
-        expect(valid.split(' ').join('').length).toBeGreaterThan(8);
-    });
 });
