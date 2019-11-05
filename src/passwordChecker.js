@@ -7,7 +7,7 @@ function passwordIsValid (password) {
     	if(password == "") throw("Password cannot be empty");
 
     	// Check if password is atleast 8 characters long
-    	if(password.length < 9) throw("Password should be at least 8 character long");
+    	if(password.length < 8) throw("Password should be at least 8 character long");
 
     	// Check if at least one lowercase letter exists
     	if(password.match(/[a-z]/g) == null) throw("Pasword should at least have one lowercase");
