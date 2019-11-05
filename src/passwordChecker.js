@@ -4,7 +4,7 @@ function passwordIsValid (password) {
     try {
 
     	// Check if password exists
-    	if() throw("Password cannot be empty");
+    	if(password == "") throw("Password cannot be empty");
 
     	// Check if password is atleast 8 characters long
     	if(password.length < 9) throw("Password should be at least 8 character long");
@@ -28,15 +28,23 @@ function passwordIsValid (password) {
 }
 
 function passwordIsOk(password) {
-	try {
-		if ((password == "") && (password.length < 9)) {
 
+	let conditions = [
+		'/[a-z]/g',
+		'/[A-Z]/g',
+		'/^(?=.*\d)/g',
+		'/[{(%$&*"\'\|#@!)}]/g',
+	];
+
+	if ((password == "") && (password.length < 9)) {
+		for(let i = 0; i < conditions.length; i++) {
+			if (password.match(conditions[i]) == null) {
+				return false;
+			}
 		}
-
-		return true;
-	} catch (err) {
-		return err;
 	}
+
+	return true;
 }
 
 
