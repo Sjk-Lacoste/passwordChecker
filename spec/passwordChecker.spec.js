@@ -33,6 +33,20 @@ describe("Password is valid", () => {
 describe("Password is okay", () => {
     let password = 'P@$sw0rd1';
     let valid = validate.passwordIsOk(password);
+
+    let conditions = [
+        { n: '/[a-z]/g' },
+        { n: '/[A-Z]/g' },
+        { n: '/^(?=.*\d)/g' },
+        { n: '/[{(%$&*"\'\|#@!)}]/g' },
+    ];
     
 
+    if ((password == "") && (password.length < 9)) {
+        it("should return true if at least three conditions are true", () => {
+            conditions.forEach( condition => {
+                expect(valid).toMatch(condition.n);
+            });
+        });
+    }
 });

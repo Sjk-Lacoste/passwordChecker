@@ -49,5 +49,6 @@ function passwordIsOk(password) {
 
 
 module.exports = {
-	passwordIsValid
+	passwordIsValid,
+	passwordIsOk
 };
